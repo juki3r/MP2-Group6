@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MP2</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <!--ROW-1-->
+    <div class="row">
+        <div class="col-6"><span id="dashboard">Hello Test</span></div>
+        <div class="col-12 col-md-6">
+            <h6 id="time"></h6>
+            <h6 id="date"></h6>
+        </div>
+    </div>
+    <!--ROW-2-->
+    <div class="row">
+      <!--Weather Area-->
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+            <div class="card card_weather">
+              <div class="card-header">
+                <h4 class="panel_head">Weather</h4>
+              </div>
+              <div class="card-body">
+    
+              </div>
+              <div class="card-footer">
+               
+              </div>
+            </div>
+        </div>
+        <!--LIGHTNING SECTION-->
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">            
+            <div class="card cardlightning">
+              <div class="card-head">
+                <h4 class="panel_head">Lightning</h4>
+                <div class="card-body">
+                  <!--Carousel-->
+            <div id="lightning" class="carousel slide my-4">
+              <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                  <h5>Bedroom 1</h5>
+                  <img id="room1bulb" onclick="room1light()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Bedroom 2</h5>
+                  <img id="room2bulb" onclick="room2light()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Bedroom 3</h5>
+                  <img id="room3bulb" onclick="room3light()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Living room</h5>
+                  <img id="livingroombulb" onclick="livingroomlight()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Kitchen room</h5>
+                  <img id="kitchenroombulb" onclick="kitchenroomlight()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Frontyard</h5>
+                  <img id="frontyardbulb" onclick="frontyardlight()"  class="bulbimage">
+                </div>
+                <div class="carousel-item">
+                  <h5>Backyard</h5>
+                  <img id="backyardbulb" onclick="backyardlight()"  class="bulbimage">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#lightning" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#lightning" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+          <div class="card cardgenerator">
+            <div class="card-head">
+              <h4 class="panel_head">Generator & Solar</h4>
+            </div>
+            <div class="card-body">
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+    <!--ROW-3-->
+    <div class="row">
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+          <div class="card card-calendar">
+            <div class="card-head">
+              <h4 class="panel_head">Calendar</h4>
+            </div>
+            <div class="card-body">
+      
+            </div>
+            <div class="card-footer">
+
+            </div>
+          </div>
+            
+        </div>
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+          <div class="card card-Energy">
+            <div class="card-head">
+              <h4 class="panel_head">Energy monitor</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="myChart"></canvas>
+              <div class="row text-center text-light">
+                <div class="col">
+                  <span id="voltage"></span> V
+                </div>
+                <div class="col">
+                  <span id="ampere"></span> A
+                </div>
+                <div class="col">
+                  <span id="kwh"></span> kwh
+                </div>
+              </div>
+            </div>
+          </div>           
+        </div>
+        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+          <div class="card cardlogs">
+            <div class="card-head">
+              <h4 class="panel_head">LOGS</h4>
+            </div>
+            <div class="card-body">
+              <textarea  id="logs" cols="100" rows="10" class="w-100" disabled></textarea>
+            </div>
+          </div>         
+        </div>
+    </div>
+  </div>
+<!--NavBar at the bottom-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lightning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Generator&Solar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">EnergyMonitoring</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Logs</a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
+    
+   
+
+
+    <script src="script.js"></script>
+</body>
+</html>

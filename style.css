@@ -1,0 +1,108 @@
+body{
+    padding: 10px;
+    background-color: #000005;
+    color: white;
+}
+
+.card_weather{
+    background: linear-gradient(to right, #0D0D15 30%, #0D0C1A 30%, #16143d 60%);
+    height: 380px;
+    margin: 0 0 10px 0;
+    
+}
+.cardlightning{
+    background-color: #12123d;
+    height: 380px;
+    margin: 0 -15px 10px -15px;
+}
+.cardgenerator{
+    background: linear-gradient(to right,  #16143d 20%, #0D0C1A 60%,  #0D0D15 20%);
+    height: 380px;
+    margin: 0 0 10px 0;
+}
+.card-calendar{
+    background: linear-gradient(to right, #0D0D15 30%, #0D0C1A 30%, #0D0C2B 60%);
+    height: 380px;
+    margin: 0 0 10px 0;
+}
+.card-Energy{
+    background-color: #12123d;
+    height: 380px;
+    margin: 0 -15px 10px -15px;
+}
+.cardlogs{
+    background-color: #0C153C;
+    height: 380px;
+    margin: 0 0 10px 0;
+}
+h5{
+    color: white;
+    font-family: Arial Narrow;
+}
+#logs{
+    background-color: #0C153C;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+}
+
+#dashboard{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#time, #date{
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+.panel_head{
+    text-align: left;
+    font-family: Arial Narrow;
+    color: white;
+    padding: 10px 0 0 20px;
+    
+}
+.bulbimage{
+    width: 100px;
+    height: 180px;
+}
+.chartjs-render-monitor{
+    height: 75% !important;
+    width: 100% !important;
+}
+
+
+/*Media Queries */
+
+@media screen and (max-width:768px){
+    .chartjs-render-monitor{
+        height: 75% !important;
+        width: 100% !important;  
+    }
+    #myChart{
+        height: 262px !important;
+    }
+    .panel_head{
+        font-size: 20px;
+    }
+    .bulbimage{
+        width: 80px;
+        height: 140px;
+    }
+    .card{
+        height: 320px;
+    }
+}
+
+@media screen and (max-width:500px){
+    #dashboard{
+        display: none;
+    }
+    #time, #date{
+        text-align: center;
+    }
+    .panel_head{
+        font-size: 18px;
+    }
+}
