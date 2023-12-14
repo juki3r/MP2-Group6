@@ -11,19 +11,206 @@
 </head>
 <body>
 
-  <div class="container-fluid">
+
+
+
+
+        <!--NAVBAR-->
+        <nav>
+          <div class="User-div">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              </svg>
+              <span class="user">KodeGo</span>
+          </div>
+          <div class="nav-div">
+              <button class="navbtn" id="homepage">Home</button>
+              <button class="navbtn" id="weather">Weather</button>
+              <button class="navbtn" id="lights">Lights</button>
+              <button class="navbtn" id="calendar">Calendar</button>
+              <button class="navbtn" id="power">Power</button>
+              <button class="navbtn" id="settings">Settings</button>
+          </div>
+          <div class="nav-footer">
+              <button class="navbtn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                  </svg>
+              </button>
+          </div>
+      </nav>
+      <main>
+          <!--Date and Time-->
+          <div class="row date_time">
+              <div class="col-12 col-md-6 text-center d-flex justify-content-center align-self-center">
+                  <h4 class="petsa">Getting Date....</h4>
+              </div>
+              <div class="col-12 col-md-6 text-center d-flex justify-content-center align-self-center">
+                  <h4 class="oras">Getting time....</h4>
+              </div>
+          </div>
+
+          <!-- <div class="mobile-nav d-flex flex-column m-0 p-0">
+              <div class="align-self-end">
+                  <button class="hamburger" onclick="hamburgerbtn()">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-menu-button-wide" viewBox="0 0 16 16">
+                          <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5z"/>
+                          <path d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
+                        </svg>
+                  </button>
+              </div>
+              <div class="mobile-nav-list" id="mobile">
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Home</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Weather</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Lights</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Calendar</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Power</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Settings</a>
+                 <a href="#" type="button " class="btn w-100 mobile-btn">Logout</a>
+              </div>
+          </div>   -->
+
+
+          <div class="row">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Weather</h4>
+                      
+                  </div>
+              </div>
+
+              <!-- LIGHTS -->
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Lights</h4>
+                      <!--CAROUSEL-->
+                      <div id="lightning" class="carousel slide my-4">
+                        <div class="carousel-inner text-center">
+                          <div class="carousel-item active">
+                            <h5>Bedroom 1</h5>
+                            <img id="room1bulb" onclick="room1light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Bedroom 2</h5>
+                            <img id="room2bulb" onclick="room2light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Bedroom 3</h5>
+                            <img id="room3bulb" onclick="room3light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Living room</h5>
+                            <img id="livingroombulb" onclick="livingroomlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Kitchen room</h5>
+                            <img id="kitchenroombulb" onclick="kitchenroomlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Frontyard</h5>
+                            <img id="frontyardbulb" onclick="frontyardlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Backyard</h5>
+                            <img id="backyardbulb" onclick="backyardlight()"  class="bulbimage">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#lightning" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#lightning" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+               
+                      
+                      
+        
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Electricity</h4>
+                      
+                  </div>
+              </div>
+              
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shawdow border rounded wrapper-div">
+                      <h4>Calendar</h4>
+                      
+                  </div>
+              </div>
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Security</h4>
+                      
+                  </div>
+              </div>
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Logs</h4>
+                      <textarea  id="logs" cols="100" rows="10" class="w-100" disabled></textarea>
+                  </div>
+              </div>
+          </div>
+      </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container-fluid"> -->
     <!--ROW-1-->
-    <div class="row">
-        <div class="col-6"><span id="dashboard">Hello G-6</span></div>
+    <!-- <div class="row">
+        <div class="col-6"><span id="dashboard">Dashboard</span></div>
         <div class="col-12 col-md-6">
             <h6 id="time"></h6>
             <h6 id="date"></h6>
         </div>
-    </div>
+    </div> -->
     <!--ROW-2-->
-    <div class="row">
+    <!-- <div class="row"> -->
       <!--Weather Area-->
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">
             <div class="card card_weather">
               <div class="card-header">
                 <h4 class="panel_head">Weather</h4>
@@ -35,72 +222,40 @@
                
               </div>
             </div>
-        </div>
+        </div> -->
         <!--LIGHTNING SECTION-->
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">            
+        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">            
             <div class="card cardlightning">
               <div class="card-head">
                 <h4 class="panel_head">Lightning</h4>
-                <div class="card-body">
+                <div class="card-body"> -->
                   <!--Carousel-->
-            <div id="lightning" class="carousel slide my-4">
-              <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                  <h5>Bedroom 1</h5>
-                  <img id="room1bulb" onclick="room1light()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Bedroom 2</h5>
-                  <img id="room2bulb" onclick="room2light()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Bedroom 3</h5>
-                  <img id="room3bulb" onclick="room3light()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Living room</h5>
-                  <img id="livingroombulb" onclick="livingroomlight()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Kitchen room</h5>
-                  <img id="kitchenroombulb" onclick="kitchenroomlight()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Frontyard</h5>
-                  <img id="frontyardbulb" onclick="frontyardlight()"  class="bulbimage">
-                </div>
-                <div class="carousel-item">
-                  <h5>Backyard</h5>
-                  <img id="backyardbulb" onclick="backyardlight()"  class="bulbimage">
-                </div>
+        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">
+          <div class="card cardgenerator">    
+            <div class="row">
+              <div class="col text-light  p-3 m-5">
+                <h4>Generator</h4>
+                <h6>Status :</h6>
+                <h6>RPM :</h6>
+                <h6>Fuel :</h6>
+                <h6>Lub Oil :</h6>
+                <h6>Voltage :</h6>    
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#lightning" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#lightning" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-                </div>
+              <div class="col text-light p-3 m-5">
+                <h4>Solar</h4>
+                <h6>Status :</h6>
+                <h6>PV : </h6>
+                <h6>Battery:</h6>
+                <h6>Output Voltage :</h6>
+                <h6>Temp :</h6>
               </div>
-            </div>
-        </div>
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-          <div class="card cardgenerator">
-            <div class="card-head">
-              <h4 class="panel_head">Generator & Solar</h4>
-            </div>
-            <div class="card-body">
-
             </div>
           </div>
 
         </div>
-    </div>
+    </div> -->
     <!--ROW-3-->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12 col-xl-4 col-lg-4 col-md-4">
           <div class="card card-calendar">
             <div class="card-head">
@@ -113,8 +268,8 @@
 
             </div>
           </div>
-            
-        </div>
+             -->
+        <!-- </div>
         <div class="col-12 col-xl-4 col-lg-4 col-md-4">
           <div class="card card-Energy">
             <div class="card-head">
@@ -142,40 +297,13 @@
               <h4 class="panel_head">LOGS</h4>
             </div>
             <div class="card-body">
-              <textarea  id="logs" cols="100" rows="10" class="w-100" disabled></textarea>
+              
             </div>
           </div>         
         </div>
     </div>
-  </div>
-<!--NavBar at the bottom-->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lightning</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Generator&Solar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">EnergyMonitoring</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Logs</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
+  </div> -->
+
     
    
 
