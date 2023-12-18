@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>MP2 Login</title>
+
+    <style>
+        body {
+            background-image: url(images/login-bg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        input, button {
+            opacity: 2;
+        }
+
+        .card {
+            background-color: rgb(15, 69, 73);
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-shadow: 10px 5px 5px #191717;
+            opacity: 0.9;
+        }
+
+        .card h2 {
+            color: white;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="row">
+            <div class="card" style="width: 30rem; margin: 135px auto;">
+                <div class="row ">
+                    <div class="col mt-5 text-center">
+                        <h2>Home Automation</h2>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col p-5">
+                        <div>
+                            <p id="userRequired" style="display: none; font-weight: bold; color: rgb(241, 223, 223);">*Username is Required!</p>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username" onkeyup="requiredField()">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div>
+                            <p id="passRequired" style="display: none; font-weight: bold; color: rgb(241, 223, 223);">*Password is Required!</p>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" onkeyup="requiredField()">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                        </div>
+                        <div>
+                            <p id="IncUserPassword" style="display: none; text-align: center; font-weight: bold; color: rgb(241, 223, 223);">Incorrect Username or Password!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
