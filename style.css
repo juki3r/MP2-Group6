@@ -5,8 +5,7 @@ body {
 }
 
 nav {
-    background-color: rgb(201, 112, 10);
-    color: white;
+    background-color: rgb(80, 48, 7);
     float: left;
     display: flex;
     flex-direction: column;
@@ -39,6 +38,7 @@ nav {
     border: none;
     cursor: pointer;
     padding: 10px;
+    color: white;
 }
 .nav-footer {
     margin:  auto;
@@ -50,12 +50,19 @@ main {
 }
 
 .date_time{
-    height: 10%;
+    height: 10vh;
 }
 .appdisplay{
     height: 45vh;
     background-color: none;
-
+}
+#main-wrapper{
+    height: 90vh;
+    background-color: antiquewhite;
+   
+}
+.sub-wrapper{
+  
 }
 
 /*Mobile nav*/
@@ -109,6 +116,18 @@ main {
         border: none;
     }
 }
+
+table{
+    background-color: black;
+    width: 100%;
+    margin-top: 10px;
+}
+td{
+    border: 1px solid red;
+}
+
+
+
 
 
 @media screen and (max-width:500px){

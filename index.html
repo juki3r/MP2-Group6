@@ -27,7 +27,7 @@
           <div class="nav-div">
               <button class="navbtn" id="homepage">Home</button>
               <button class="navbtn" id="weather">Weather</button>
-              <button class="navbtn" id="lights">Lights</button>
+              <button class="navbtn" id="lights" onclick=" loadPage()">Lights</button>
               <button class="navbtn" id="calendar">Calendar</button>
               <button class="navbtn" id="power">Power</button>
               <button class="navbtn" id="settings">Settings</button>
@@ -71,7 +71,8 @@
               </div>
           </div>   -->
 
-
+          <div id="main-wrapper">
+            <div class="sub-wrapper">
           <div class="row">
               <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
                   <div class=" w-100 shadow border rounded wrapper-div">
@@ -134,6 +135,36 @@
               <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Electricity</h4>
+                      <table>
+                        <tr>
+                          <td>Active</td>
+                          <td>Main Power</td>
+                        </tr>
+                        <tr>
+                          <td>Voltage</td>
+                          <td>220 V</td>
+                        </tr>
+                        <tr>
+                          <td>Current</td>
+                          <td>180 A</td>
+                        </tr>                       
+                        <tr>
+                          <td>KWH</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <td>Temperature</td>
+                          <td>30&deg;C</td>
+                        </tr>
+                        <tr>
+                          <td>Humidity</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <td>Back up </td>
+                          <td>STNDBY</td>
+                        </tr>                       
+                      </table>
                       
                   </div>
               </div>
@@ -160,6 +191,8 @@
                   </div>
               </div>
           </div>
+        </div>
+      </div>
       </main>
 
 

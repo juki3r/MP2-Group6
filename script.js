@@ -30,7 +30,7 @@ homepage.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 homepage.addEventListener("mouseover", function() {
-    homepage.style.background = 'grey';
+    homepage.style.background = 'rgb(12, 168, 121)';
     
 });
 homepage.addEventListener("mouseleave", function() {
@@ -40,7 +40,7 @@ weather.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 weather.addEventListener("mouseover", function() {
-    weather.style.background = 'grey';
+    weather.style.background = 'rgb(12, 168, 121)';
 });
 weather.addEventListener("mouseleave", function() {
     weather.style.background = 'transparent';
@@ -49,7 +49,7 @@ lights.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 lights.addEventListener("mouseover", function() {
-    lights.style.background = 'grey';
+    lights.style.background = 'rgb(12, 168, 121)';
 });
 lights.addEventListener("mouseleave", function() {
     lights.style.background = 'transparent';
@@ -58,7 +58,7 @@ calendar.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 calendar.addEventListener("mouseover", function() {
-    calendar.style.background = 'grey';
+    calendar.style.background = 'rgb(12, 168, 121)';
 });
 calendar.addEventListener("mouseleave", function() {
     calendar.style.background = 'transparent';
@@ -67,7 +67,7 @@ power.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 power.addEventListener("mouseover", function() {
-    power.style.background = 'grey';
+    power.style.background = 'rgb(12, 168, 121)';
 });
 power.addEventListener("mouseleave", function() {
     power.style.background = 'transparent';
@@ -76,7 +76,7 @@ settings.addEventListener("click", function(){
     window.location.href = 'index.html';
 });
 settings.addEventListener("mouseover", function() {
-    settings.style.background = 'grey';
+    settings.style.background = 'rgb(12, 168, 121)';
 });
 settings.addEventListener("mouseleave", function() {
     settings.style.background = 'transparent';
@@ -231,27 +231,27 @@ if((localStorage.getItem('frontyard_light_switch') == null) || (localStorage.get
 var backyardbulb_status = document.getElementById('backyardbulb');
 function backyardlight(){   
     if(backyardbulb_status.src.match("bulbon")) {
-        backyardbulb_status.src = "images/pic_bulboff.gif";
-        localStorage.setItem('backyard_light_switch', 0);
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned off \n';
-        msg.text = "Back yard light is off";
+        // backyardbulb_status.src = "images/pic_bulboff.gif";
+        fetch('https://api.thingspeak.com/update?api_key=ELGQ9S8X9TB8CZ6F&field2=0');
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn off \n';
+        msg.text = "Back yard light will be turn off";
         window.speechSynthesis.speak(msg);
         
+        
         } else {
-            backyardbulb_status.src = "images/pic_bulbon.gif";
-            localStorage.setItem('backyard_light_switch', 0.1);
-            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned on \n';
-            msg.text = "Back yard light is on";
+            // backyardbulb_status.src = "images/pic_bulbon.gif";
+            fetch('https://api.thingspeak.com/update?api_key=ELGQ9S8X9TB8CZ6F&field2=1');
+            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn on \n';
+            msg.text = "Back yard light will be turn on";
             window.speechSynthesis.speak(msg);          
             }
 }
-if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getItem('backyard_light_switch') == 0)){
-        backyardbulb_status.src = "images/pic_bulboff.gif";
-        localStorage.setItem('backyard_light_switch', 0);
-            }else{
-                backyardbulb_status.src = "images/pic_bulbon.gif";
-                localStorage.setItem('backyard_light_switch', 0.1);
-            }
+setInterval(() => {
+    var demo = fetch('https://api.thingspeak.com/channels/2384252/fields/2.json?results=2')
+    demo.then(res => res.json()).then(data => 
+        data.feeds[1].field2 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif" : backyardbulb_status.src = "images/pic_bulbon.gif");
+}, 5);
+
 
 
 
@@ -262,12 +262,18 @@ textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTime
 
 
 
-
-
-
-
-
-
+// function loadPage() {
+//     const box = document.getElementById('main-wrapper');
+  
+//     fetch('lights.html')
+//       .then(response => response.text())
+//       .then(html => {
+//         box.innerHTML = html;
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+//   }
 
 
 
@@ -540,6 +546,6 @@ setInterval(() => {
 
 
 
-// localStorage.clear()
+localStorage.clear()
 
 */
