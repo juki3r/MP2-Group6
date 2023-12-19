@@ -146,6 +146,90 @@ td{
     }
     
 }
+/*calendar css*/
+:root {
+    --calendar-font-color: #fff;
+    --weekdays-border-bottom-color: #ebf1fc;
+    --calendar-date-hover-color: #b3b3b3;
+    --calendar-dummy-color: #505050;
+    --calendar-today-color: linear-gradient(to bottom, #18c194, #329649);
+  }
+  #myCalendar {
+    align-items: center;
+    font-family: Arial, Helvetica;
+    overflow: hidden;
+  }
+  .calendar_inner {
+    padding: 1em;
+  }
+  .calendar_headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .fa-solid.fa-arrow-left,
+  .fa-solid.fa-arrow-right {
+    cursor: pointer;
+    font-size: 1em;
+  }
+  .month_year{
+    font-size: 1em;
+  }
+  .current_datetime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--calendar-current-date-color);
+    padding: 0;
+    margin-bottom: 0em;
+  }
+  .current_datetime .daytxt {
+    background: var(--calendar-today-color);
+    padding: 0.2em;
+    border-radius: 10px;
+    color: var(--calendar-font-color);
+  }
+  .days_date ul {
+    list-style-type: none;
+    
+  }
+  .days_date .days,
+  .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 0;
+  }
+  .days_date .days {
+    margin: 0;
+  }
+  .days_date .days li {
+    border-bottom: 2px solid var(--weekdays-border-bottom-color);
+    margin: 0 0.2rem;
+    padding: 0;
+    font-size: 0.6em;
+  }
+  .dates li {
+    padding: 0.5em;
+    margin: 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--calendar-font-color);
+    font-size: 10px;
+  }
+  .days_date .dates li:hover {
+    background-color: rgba(0,0,0,0.3)
+  }
+  .days_date .dates li.active {
+    background: var(--calendar-today-color);
+  }
+  .days_date .dummy {
+    color: var(--calendar-dummy-color);
+  }
 
 
 
