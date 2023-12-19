@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="eventcalendar.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton"><</button>
+          <button id="nextButton">></button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+    <div class="container2" >
+      <div id="event-form">
+        <h2>Reminders</h2>
+        <form id="add-event-form">
+          <label for="event-title">Event Title:</label>
+          <input type="text" id="event-title" required>
+      
+          <label for="event-date">Event Date:</label>
+          <input type="date" id="event-date" required>
+      
+          <label for="event-time">Event Time:</label>
+          <input type="time" id="event-time" required>
+      
+          <button type="button" onclick="addEvent()">Add Event</button>
+        </form>
+        <div>
+          <h2>Events</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Event</th>
+              </tr>
+            </thead>
+            <tbody id="event-list">
+            </tbody>
+          </table>
+          </div>
+      </div>
+      </div>
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="eventcalendar.js"></script>
+  </body>
+</html>
