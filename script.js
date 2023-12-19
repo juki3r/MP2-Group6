@@ -234,9 +234,7 @@ function backyardlight(){
         fetch('https://api.thingspeak.com/update?api_key=AXFVLCN4EHVQHHV9&field1=0');
         textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn off \n';
         msg.text = "Back yard light will be turn off";
-        window.speechSynthesis.speak(msg);
-        
-        
+        window.speechSynthesis.speak(msg); 
         } else {
             fetch('https://api.thingspeak.com/update?api_key=AXFVLCN4EHVQHHV9&field1=1000');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn on \n';
@@ -251,7 +249,7 @@ setInterval(() => {
 
     var main_power = fetch('https://api.thingspeak.com/channels/2385141/fields/1.json?results=2');
     main_power.then(res => res.json()).then(function(e){
-        if(e.feeds[0].field1 == 0){
+        if(e.feeds[0].field1 > 0){
             document.getElementById('service').innerHTML = 'Main Power';
             document.getElementById('backup').innerHTML = 'StandBy';
         }else{
