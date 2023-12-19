@@ -275,7 +275,7 @@ textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTime
 
 
  /*calendar js */
-
+/*
 "use strict";
 
 const datetxtEl = document.querySelector(".datetxt");
@@ -376,7 +376,7 @@ btnEl.forEach((btns) => {
 //   }
 
 
-
+*/
 
 
 
