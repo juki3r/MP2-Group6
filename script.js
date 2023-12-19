@@ -240,7 +240,7 @@ function backyardlight(){
         
         } else {
             // backyardbulb_status.src = "images/pic_bulbon.gif";
-            fetch('https://api.thingspeak.com/update?api_key=ELGQ9S8X9TB8CZ6F&field2=1');
+            fetch('https://api.thingspeak.com/update?api_key=ELGQ9S8X9TB8CZ6F&field2=100');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn on \n';
             msg.text = "Back yard light will be turn on";
             window.speechSynthesis.speak(msg);          
@@ -250,7 +250,7 @@ setInterval(() => {
     var demo = fetch('https://api.thingspeak.com/channels/2384252/fields/2.json?results=2')
     demo.then(res => res.json()).then(data => 
         data.feeds[1].field2 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif" : backyardbulb_status.src = "images/pic_bulbon.gif");
-}, 5);
+}, 10);
 
 
 

@@ -58,7 +58,7 @@ main {
 }
 #main-wrapper{
     height: 90vh;
-    background-color: antiquewhite;
+
    
 }
 .sub-wrapper{
@@ -118,12 +118,13 @@ main {
 }
 
 table{
-    background-color: black;
+    background-color: transparent;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 td{
     border: 1px solid red;
+    height: 30px;
 }
 
 
