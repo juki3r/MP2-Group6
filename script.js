@@ -271,6 +271,23 @@ let textarea = document.getElementById('logs');
 textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n'
 
 
+    
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
