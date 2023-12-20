@@ -17,70 +17,6 @@ function hamburgerbtn() {
     }   
 }
 
-// Nav Icons Click
-var homepage = document.getElementById('homepage');
-var weather = document.getElementById('weather');
-var lights = document.getElementById('lights');
-var calendar = document.getElementById('calendar');
-var power = document.getElementById('power');
-var settings = document.getElementById('settings');
-
-
-homepage.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-homepage.addEventListener("mouseover", function() {
-    homepage.style.background = 'rgb(12, 168, 121)';
-    
-});
-homepage.addEventListener("mouseleave", function() {
-    homepage.style.background = 'transparent'; 
-});
-weather.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-weather.addEventListener("mouseover", function() {
-    weather.style.background = 'rgb(12, 168, 121)';
-});
-weather.addEventListener("mouseleave", function() {
-    weather.style.background = 'transparent';
-});
-lights.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-lights.addEventListener("mouseover", function() {
-    lights.style.background = 'rgb(12, 168, 121)';
-});
-lights.addEventListener("mouseleave", function() {
-    lights.style.background = 'transparent';
-});
-calendar.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-calendar.addEventListener("mouseover", function() {
-    calendar.style.background = 'rgb(12, 168, 121)';
-});
-calendar.addEventListener("mouseleave", function() {
-    calendar.style.background = 'transparent';
-});
-power.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-power.addEventListener("mouseover", function() {
-    power.style.background = 'rgb(12, 168, 121)';
-});
-power.addEventListener("mouseleave", function() {
-    power.style.background = 'transparent';
-});
-settings.addEventListener("click", function(){
-    window.location.href = 'index.html';
-});
-settings.addEventListener("mouseover", function() {
-    settings.style.background = 'rgb(12, 168, 121)';
-});
-settings.addEventListener("mouseleave", function() {
-    settings.style.background = 'transparent';
-});
 
 
 //Bedroom - 1
@@ -264,11 +200,9 @@ setInterval(() => {
 
 
 
-
-
 //Getting all Logs to be displayed
 let textarea = document.getElementById('logs');
-textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n'
+textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n';
 
 
     

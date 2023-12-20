@@ -12,35 +12,17 @@
 <body>
 
 
-
-
-
-        <!--NAVBAR-->
-        <nav>
-          <div class="User-div">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-              </svg>
-              <span class="user">KodeGo</span>
+      <div class="container-fluid">
+        <!--User-->
+        <div class="row">
+          <div class="col nav-user text-end">
+            <span>KodeGo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
           </div>
-          <div class="nav-div">
-              <button class="navbtn" id="homepage">Home</button>
-              <button class="navbtn" id="weather">Weather</button>
-              <button class="navbtn" id="lights" onclick=" loadPage()">Lights</button>
-              <button class="navbtn" id="calendar">Calendar</button>
-              <button class="navbtn" id="power">Power</button>
-              <button class="navbtn" id="settings">Settings</button>
-          </div>
-          <div class="nav-footer">
-              <button class="navbtn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-                  </svg>
-              </button>
-          </div>
-      </nav>
-      <main>
+        </div>
           <!--Date and Time-->
           <div class="row date_time">
               <div class="col-12 col-md-6 text-center d-flex justify-content-center align-self-center">
@@ -51,30 +33,15 @@
               </div>
           </div>
 
-          <!-- <div class="mobile-nav d-flex flex-column m-0 p-0">
-              <div class="align-self-end">
-                  <button class="hamburger" onclick="hamburgerbtn()">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-menu-button-wide" viewBox="0 0 16 16">
-                          <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5z"/>
-                          <path d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
-                        </svg>
-                  </button>
-              </div>
-              <div class="mobile-nav-list" id="mobile">
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Home</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Weather</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Lights</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Calendar</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Power</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Settings</a>
-                 <a href="#" type="button " class="btn w-100 mobile-btn">Logout</a>
-              </div>
-          </div>   -->
 
-          <div id="main-wrapper">
-            <div class="sub-wrapper">
-          <div class="row">
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+
+
+
+
+
+        <!--  Wweather -->
+          <div class="row row1">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center ">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Weather</h4>
                       
@@ -82,7 +49,7 @@
               </div>
 
               <!-- LIGHTS -->
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center ">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Lights</h4>
                       <!--CAROUSEL-->
@@ -132,7 +99,7 @@
                       
                       
         
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center ">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Electricity</h4>
                       <table>
@@ -172,226 +139,27 @@
           </div>
           <!-- Calendar-->
           <div class="row">
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
                   <div class=" w-100 shawdow border rounded wrapper-div" id="myCalendar">
-<!--                       <div class="calendar_inner">
-                          <div class="calendar_controls">
-                            <div class="calendar_headings">
-                              <i class="fa-solid fa-arrow-left" id="prev"></i>
-                              <h2 class="month_year"></h2>
-                              <i class="fa-solid fa-arrow-right" id="next"></i>
-                            </div>
-                            <div class="current_datetime">
-                              <p class="daytxt">Today</p>
-                              <p class="datetxt"></p>
-                            </div>
-                            <div class="days_date">
-                              <ul class="days">
-                                <li>Sun</li>
-                                <li>Mon</li>
-                                <li>Tue</li>
-                                <li>Wed</li>
-                                <li>Thu</li>
-                                <li>Fri</li>
-                                <li>Sat</li>
-                              </ul>
-                              <ul class="dates">
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                                <li>10</li>
-                                <li>11</li>
-                                <li>12</li>
-                                <li>13</li>
-                                <li>14</li>
-                                <li>15</li>
-                                <li>17</li>
-                                <li>18</li>
-                                <li>19</li>
-                                <li>20</li>
-                                <li>21</li>
-                                <li>22</li>
-                                <li>23</li>
-                                <li>24</li>
-                                <li>25</li>
-                                <li class="dummy">26</li>
-                                <li class="dummy">27</li>
-                                <li class="dummy">28</li>
-                                <li class="dummy">29</li>
-                                <li class="dummy">30</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div> -->
+
                   </div>
               </div>
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Security</h4>
                       
                   </div>
               </div>
-              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center p-0">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
                   <div class=" w-100 shadow border rounded wrapper-div">
                       <h4>Logs</h4>
                       <textarea  id="logs" cols="100" rows="10" class="w-100" disabled></textarea>
                   </div>
               </div>
           </div>
-        </div>
-      </div>
-      </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="container-fluid"> -->
-    <!--ROW-1-->
-    <!-- <div class="row">
-        <div class="col-6"><span id="dashboard">Dashboard</span></div>
-        <div class="col-12 col-md-6">
-            <h6 id="time"></h6>
-            <h6 id="date"></h6>
-        </div>
-    </div> -->
-    <!--ROW-2-->
-    <!-- <div class="row"> -->
-      <!--Weather Area-->
-        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-            <div class="card card_weather">
-              <div class="card-header">
-                <h4 class="panel_head">Weather</h4>
-              </div>
-              <div class="card-body">
-    
-              </div>
-              <div class="card-footer">
-               
-              </div>
-            </div>
-        </div> -->
-        <!--LIGHTNING SECTION-->
-        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">            
-            <div class="card cardlightning">
-              <div class="card-head">
-                <h4 class="panel_head">Lightning</h4>
-                <div class="card-body"> -->
-                  <!--Carousel-->
-        <!-- <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-          <div class="card cardgenerator">    
-            <div class="row">
-              <div class="col text-light  p-3 m-5">
-                <h4>Generator</h4>
-                <h6>Status :</h6>
-                <h6>RPM :</h6>
-                <h6>Fuel :</h6>
-                <h6>Lub Oil :</h6>
-                <h6>Voltage :</h6>    
-              </div>
-              <div class="col text-light p-3 m-5">
-                <h4>Solar</h4>
-                <h6>Status :</h6>
-                <h6>PV : </h6>
-                <h6>Battery:</h6>
-                <h6>Output Voltage :</h6>
-                <h6>Temp :</h6>
-              </div>
-            </div>
-          </div>
-
-        </div>
-    </div> -->
-    <!--ROW-3-->
-    <!-- <div class="row">
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-          <div class="card card-calendar">
-            <div class="card-head">
-              <h4 class="panel_head">Calendar</h4>
-            </div>
-            <div class="card-body">
       
-            </div>
-            <div class="card-footer">
-
-            </div>
-          </div>
-             -->
-        <!-- </div>
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-          <div class="card card-Energy">
-            <div class="card-head">
-              <h4 class="panel_head">Energy monitor</h4>
-            </div>
-            <div class="card-body">
-              <canvas id="myChart"></canvas>
-              <div class="row text-center text-light">
-                <div class="col">
-                  <span id="voltage"></span> V
-                </div>
-                <div class="col">
-                  <span id="ampere"></span> A
-                </div>
-                <div class="col">
-                  <span id="kwh"></span> kwh
-                </div>
-              </div>
-            </div>
-          </div>           
-        </div>
-        <div class="col-12 col-xl-4 col-lg-4 col-md-4">
-          <div class="card cardlogs">
-            <div class="card-head">
-              <h4 class="panel_head">LOGS</h4>
-            </div>
-            <div class="card-body">
-              
-            </div>
-          </div>         
-        </div>
-    </div>
-  </div> -->
-
-    
-   
+      </div class="container-fluid">
 
 
     <script src="script.js"></script>

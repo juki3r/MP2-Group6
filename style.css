@@ -4,82 +4,18 @@ body {
     color: white;
 }
 
-nav {
-    background-color: rgb(80, 48, 7);
-    float: left;
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    align-items: center;
-    height: 100%;
-}
-.User-div {
-    width: 120px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
 
-}
-.nav-div{
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    width: 120px;
-    margin: 50px auto;
-    gap: 20px;
-    padding: 20px 0;
-}
-.navbtn{
-    background-color: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    color: white;
-}
-.nav-footer {
-    margin:  auto;
-}
-
-/* MAin */
-main {
-    height: 100vh;
-}
 
 .date_time{
-    height: 10vh;
+    height: 5vh;
 }
 .appdisplay{
     height: 45vh;
-    background-color: none;
-}
-#main-wrapper{
-    height: 90vh;
+    background-color: red;
+    padding: 0;
 
-   
-}
-.sub-wrapper{
-  
 }
 
-/*Mobile nav*/
-.hamburger{
-    display: none;
-}
-.mobile-nav-list {
-    flex-direction: column;
-    align-items: center;
-    display: none;
-}
-.mobile-btn {
-    background-color: rgb(241, 223, 223);
-    margin: 3px 0;
-    font-size: 16px;
-    letter-spacing: 2px;
-}
 .wrapper-div{ 
     margin: 5px 5px;
     background-color: rgb(15, 69, 73);
@@ -87,7 +23,6 @@ main {
     text-align: center;
     padding: 10px;
 }
-
 
 .bulbimage{
     width: 100px;
@@ -103,20 +38,6 @@ main {
     border: none;
 }
 
-@media screen and (max-width:768px){
-    .bulbimage{
-        width: 80px;
-        height: 140px;
-    }
-    #logs{
-        background-color: transparent;
-        color: rgb(194, 243, 243);
-        font-size: 14px;
-        padding: 10px;
-        border: none;
-    }
-}
-
 table{
     background-color: transparent;
     width: 100%;
@@ -130,76 +51,27 @@ td{
 
 
 
+/* Media Query */
 
-@media screen and (max-width:500px){
-    nav{
-        display: none;
+@media screen and (max-width:1024px){
+    .bulbimage{
+        width: 100px;
+        height: 150px;
     }
-    .date_time{
-        margin-top: 10px;
+}
+
+@media screen and (max-width:768px){
+    .bulbimage{
+        width: 100px;
+        height: 130px;
     }
-    .hamburger{
-        display: block;
-    }
-    .wrapper-div{ 
-        margin: 4px 10px;
-    }
-    
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.chartjs-render-monitor{
-    height: 75% !important;
-    width: 100% !important;
+@media  screen and (max-width:500px){
+    .row1{
+        margin-top: 40px;
+    }
 }
-*/
-
-/*Media Queries */
-
-/* @media screen and (max-width:768px){
-    .chartjs-render-monitor{
-        height: 75% !important;
-        width: 100% !important;  
-    }
-    #myChart{
-        height: 262px !important;
-    }
-    .panel_head{
-        font-size: 20px;
-    }
-    
-    .card{
-        height: 320px;
-    }
-} */
-
-/* @media screen and (max-width:500px){
-    #dashboard{
-        display: none;
-    }
-    #time, #date{
-        text-align: center;
-    }
-    .panel_head{
-        font-size: 18px;
-    }
-} */
-
