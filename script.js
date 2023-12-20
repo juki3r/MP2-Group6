@@ -187,10 +187,14 @@ setInterval(() => {
     main_power.then(res => res.json()).then(function(e){
         if(e.feeds[0].field1 > 0){
             document.getElementById('service').innerHTML = 'Main Power';
+            document.getElementById('service').style.backgroundColor = 'lime';
+            document.getElementById('service').style.color = 'black';
             document.getElementById('backup').innerHTML = 'StandBy';
         }else{
             document.getElementById('service').innerHTML = 'Back-up Power';
             document.getElementById('backup').innerHTML = 'In-Service';
+            document.getElementById('service').style.backgroundColor = 'red';
+            document.getElementById('service').style.color = 'white';
         }
     });
        
