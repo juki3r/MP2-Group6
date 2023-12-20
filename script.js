@@ -199,6 +199,13 @@ setInterval(() => {
     });
        
 }, 10);
+//KWH
+let x = 10.012345;
+setInterval(() => {
+    document.getElementById('kwh').innerHTML = x.toPrecision(4);
+    x+=0.05;
+    
+}, 1000);
 
 
 
