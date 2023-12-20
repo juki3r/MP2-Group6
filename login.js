@@ -38,7 +38,7 @@ function verifiedUser(){
         incUserPass.style.display = "none";
     }else {
         if(userInput.value == "kodego" && userPass.value == "kodego"){
-            window.location.assign("https://juki3r.github.io/MP2-Group6/dashboard.html");
+            window.location.assign("https://juki3r.github.io/MP2-Group6/index.html");
             console.log(userInput.value);
     
         } else {
