@@ -25,6 +25,8 @@ function showPosition(position){
         if(response.status == 404){
             document.querySelector(".error").style.display = "block"
             document.querySelector(".weather").style.display = "none"
+            document.querySelector(".humidity-div").style.display = "none"
+            document.querySelector(".wind-speed-div").style.display = "none"
         } else {
     
             var data = await response.json();
@@ -51,6 +53,8 @@ function showPosition(position){
     
             document.querySelector(".weather").style.display = "block"
             document.querySelector(".error").style.display = "none"
+            document.querySelector(".humidity-div").style.display = "block"
+            document.querySelector(".wind-speed-div").style.display = "block"
         }
     }
     
@@ -65,6 +69,8 @@ async function searchWeather(city){
     if(response.status == 404){
         document.querySelector(".error").style.display = "block"
         document.querySelector(".weather").style.display = "none"
+        document.querySelector(".humidity-div").style.display = "none"
+        document.querySelector(".wind-speed-div").style.display = "none"
     } else {
 
         var data = await response.json();
@@ -91,6 +97,8 @@ async function searchWeather(city){
 
         document.querySelector(".weather").style.display = "block"
         document.querySelector(".error").style.display = "none"
+        document.querySelector(".humidity-div").style.display = "block"
+        document.querySelector(".wind-speed-div").style.display = "block"
     }
 }
 
