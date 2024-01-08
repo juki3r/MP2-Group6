@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.homepage {
+    height: 100vh;
+    width: 100%;
+}
+.introdiv {
+    height: 788px;
+}
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.overlay {
+    height: 788px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.contentWrapper {
+    height: 400px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    .introdiv {
+        height: 400px;
+    }
+    .overlay {
+        height: 400px;
+    }
+}
