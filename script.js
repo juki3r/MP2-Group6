@@ -215,10 +215,24 @@ setInterval(() => {
 let textarea = document.getElementById('logs');
 textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n';
 
-
-    
-
-
+// Doors
+ 
+ function maingate() {
+    let mainGate = document.getElementById('mainGate');
+    if(mainGate.innerHTML == "LOCK"){
+        mainGate.innerHTML = "UNLOCK"
+        document.getElementById('mainlock').style.display = 'none';
+        document.getElementById('mainunlock').style.display = 'inline-block';
+        document.querySelector('.btnDoor').style.backgroundColor = 'red';
+        document.querySelector('.btnDoor').style.color = 'white';
+    }else{
+        mainGate.innerHTML = "LOCK"
+        document.getElementById('mainlock').style.display = 'inline-block';
+        document.getElementById('mainunlock').style.display = 'none';
+        document.querySelector('.btnDoor').style.backgroundColor = 'lime';
+        document.querySelector('.btnDoor').style.color = 'black';
+    }
+ }
  
 
 

@@ -1,23 +1,25 @@
 body {
     height: 100vh;
-    background-color: rgb(12, 168, 121);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.dashboard {
+    background-color: #000018;
     color: white;
 }
-
-
 
 .date_time{
     height: 5vh;
 }
 .appdisplay{
-    height: 45vh;
+    height: 48vh;
     padding: 0;
 
 }
-
 .wrapper-div{ 
     margin: 5px 5px;
-    background-color: rgb(15, 69, 73);
+    background-color: #08072E;
     border: none !important;
     text-align: center;
     padding: 10px;
@@ -46,6 +48,36 @@ td{
     border: 1px solid gray;
     height: 30px;
 }
+
+.imageDivSec{
+    height: 200px;
+}
+#doorimage{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.doorSlider {
+   padding: 0;
+   margin-top: -20px;
+}
+.btnDoor {
+    width: 50%;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: lime;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
 
 
 
