@@ -1,92 +1,78 @@
-
+/*calendar css*/
 :root {
-  --calendar-bg-color: #272775;
   --calendar-font-color: #fff;
   --weekdays-border-bottom-color: #ebf1fc;
-  --calendar-date-hover-color: #b3b3b3;
-  --calendar-dummy-color: #505050;
-  --calendar-today-color: linear-gradient(to bottom, #4a19df, #156cc3);
+  --calendar-dummy-color: #a09b9b;
+  --calendar-today-color: linear-gradient(to bottom, #2210c4, #070527);
 }
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-body {
-  display: flex;
+#myCalendar {
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  font-family: Arial, Helvetica;
   overflow: hidden;
 }
-.calendar {
-  background-color: var(--calendar-bg-color);
-  color: var(--calendar-font-color);
-  border-radius: var(--calendar-border-radius);
-  max-width: 400px;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px var(--calendar-bg-color);
-}
 .calendar_inner {
-  padding: 2rem;
+  padding: 1em;
 }
 .calendar_headings {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0;
 }
 .fa-solid.fa-arrow-left,
 .fa-solid.fa-arrow-right {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1em;
+}
+.month_year{
+  font-size: 1em;
 }
 .current_datetime {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--calendar-current-date-color);
-  padding: 0.7rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 0em;
 }
 .current_datetime .daytxt {
-  background-color: rgb(27, 37, 237);
-  padding: 0.5rem 1rem;
+  background: var(--calendar-today-color);
+  padding: 0.2em;
   border-radius: 10px;
   color: var(--calendar-font-color);
 }
 .days_date ul {
   list-style-type: none;
+  
 }
 .days_date .days,
 .dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+  padding: 0;
 }
 .days_date .days {
-  margin: 1rem 0;
+  margin: 0;
 }
 .days_date .days li {
   border-bottom: 2px solid var(--weekdays-border-bottom-color);
   margin: 0 0.2rem;
+  padding: 0;
+  font-size: 0.6em;
 }
 .dates li {
-  padding: 0.5rem;
-  margin: 0.2rem;
+  padding: 0.5em;
+  margin: 0em;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border-radius: 5px;
   color: var(--calendar-font-color);
+  font-size: 10px;
 }
 .days_date .dates li:hover {
-  background-color: var(--calendar-date-hover-color);
-  color: var(--calendar-bg-color);
+  background-color: rgba(0,0,0,0.3)
 }
 .days_date .dates li.active {
   background: var(--calendar-today-color);
