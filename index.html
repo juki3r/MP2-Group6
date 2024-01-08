@@ -5,36 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>MP2 Login</title>
-
-    <style>
-        body {
-            background-image: url(images/login-bg.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        input, button {
-            opacity: 2;
-        }
-
-        .card {
-            background-color: rgb(15, 69, 73);
-            border: 1px solid #000;
-            border-radius: 10px;
-            box-shadow: 10px 5px 5px #191717;
-            opacity: 0.9;
-        }
-
-        .card h2 {
-            color: white;
-        }
-
-
-
-
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather.css">
+    <title>MP2-Group6</title>
 </head>
 <body>
 
@@ -111,21 +85,208 @@
                             </div>
                           </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" onkeyup="requiredField()">
-                            <label for="floatingPassword">Password</label>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- LIGHTS -->
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center ">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Lights</h4>
+                      <!--CAROUSEL-->
+                      <div id="lightning" class="carousel slide my-4">
+                        <div class="carousel-inner text-center">
+                          <div class="carousel-item active">
+                            <h5>Bedroom 1</h5>
+                            <img id="room1bulb" onclick="room1light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Bedroom 2</h5>
+                            <img id="room2bulb" onclick="room2light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Bedroom 3</h5>
+                            <img id="room3bulb" onclick="room3light()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Living room</h5>
+                            <img id="livingroombulb" onclick="livingroomlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Kitchen room</h5>
+                            <img id="kitchenroombulb" onclick="kitchenroomlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Frontyard</h5>
+                            <img id="frontyardbulb" onclick="frontyardlight()"  class="bulbimage">
+                          </div>
+                          <div class="carousel-item">
+                            <h5>Backyard</h5>
+                            <img id="backyardbulb" onclick="backyardlight()"  class="bulbimage">
+                          </div>
                         </div>
-                        <div class="d-grid mb-3">
-                            <button type="submit" class="btn btn-primary btn-lg">Login</button>
-                        </div>
-                        <div>
-                            <p id="IncUserPassword" style="display: none; text-align: center; font-weight: bold; color: rgb(241, 223, 223);">Incorrect Username or Password!</p>
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#lightning" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#lightning" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="login.js"></script>
+                  </div>
+               
+                      
+                      
+        
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center ">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Electricity</h4>
+                      <table>
+                        <tr>
+                          <td>Active</td>
+                          <td id="service"></td>
+                        </tr>
+                        <tr>
+                          <td>Voltage</td>
+                          <td>220 V</td>
+                        </tr>
+                        <tr>
+                          <td>Current</td>
+                          <td>180 A</td>
+                        </tr>                       
+                        <tr>
+                          <td>KWH</td>
+                          <td id="kwh">0</td>
+                        </tr>
+                        <tr>
+                          <td>Temperature</td>
+                          <td>30&deg;C</td>
+                        </tr>
+                        <tr>
+                          <td>Humidity</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <td>Back up </td>
+                          <td id="backup"></td>
+                        </tr>                       
+                      </table>
+                      
+                  </div>
+              </div>
+              
+          </div>
+          <!-- Calendar-->
+          <div class="row">
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
+                  <div class=" w-100 shawdow border rounded wrapper-div" id="myCalendar">
+                    <h4>Security</h4>
+                    <div class="imageDivSec">
+                        <img src="/images/door.png" alt="door image" id="doorimage"/>
+                    </div>
+                    <div class="doorSlider">
+                      <div id="doorsSliding" class="carousel slide">
+                        <div class="carousel-inner text-center">
+                          <div class="carousel-item active">
+                            <div style="width: 100%;">
+                              <button type="button" onclick="maingate()" class="btnDoor"><span id="mainGate"> 
+                                LOCK</span> 
+                                <i class="bi bi-shield-lock-fill" id="mainlock"></i>
+                                <i class="bi bi-shield-lock" id="mainunlock" style="display: none;"></i>
+                              </button>
+                            </div>
+                            <h5>Main Gate</h5>
+                          </div>
+                          <div class="carousel-item">
+                            <div style="width: 100%;">
+                              <button type="button" class="btnDoor"></i></button>
+                            </div>
+                            <h5>Front Door</h5>
+                          </div>
+                         
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#doorsSliding" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#doorsSliding" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Security</h4>
+                      <table>
+                       <tr>
+                        <td>Main Gate</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>Back Gate</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>Front Door</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>Back Door</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>Master Bedroom</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>Server Room</td>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                          </svg>
+                        </td>
+                       </tr>                
+                      </table>
+                  </div>
+              </div>
+              <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
+                  <div class=" w-100 shadow border rounded wrapper-div">
+                      <h4>Logs</h4>
+                      <textarea  id="logs" cols="100" rows="10" class="w-100" disabled></textarea>
+                  </div>
+              </div>
+          </div>
+
+      
+      </div class="container-fluid">
+
+
+    <script src="script.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
