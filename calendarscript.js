@@ -1,5 +1,4 @@
-"use strict";
-
+/*calendar js */
 const datetxtEl = document.querySelector(".datetxt");
 const datesEl = document.querySelector(".dates");
 const btnEl = document.querySelectorAll(".calendar_headings .fa-solid");
@@ -80,3 +79,4 @@ btnEl.forEach((btns) => {
     displayCalendar();
   });
 });
+/*calendar js*/
