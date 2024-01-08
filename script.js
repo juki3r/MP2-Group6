@@ -175,7 +175,7 @@ function backyardlight(){
             fetch('https://api.thingspeak.com/update?api_key=AXFVLCN4EHVQHHV9&field1=1000');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light will be turn on \n';
             msg.text = "Back yard light will be turn on";
-            window.speechSynthesis.speak(msg);          
+            window.speechSynthesis.speak(msg);        
             }
 }
 setInterval(() => {
@@ -218,22 +218,62 @@ textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTime
 // Doors
  
  function maingate() {
-    let mainGate = document.getElementById('mainGate');
+    let mainGate = document.getElementById('mainGateLabel');
     if(mainGate.innerHTML == "LOCK"){
-        mainGate.innerHTML = "UNLOCK"
-        document.getElementById('mainlock').style.display = 'none';
-        document.getElementById('mainunlock').style.display = 'inline-block';
-        document.querySelector('.btnDoor').style.backgroundColor = 'red';
-        document.querySelector('.btnDoor').style.color = 'white';
+        mainGate.innerHTML = "UNLOCK";
+        document.getElementById('maingateLockicon').style.display = 'none';
+        document.getElementById('maingateUnlockicon').style.display = 'inline-block';
+        document.querySelector('.maingatebtn').style.backgroundColor = 'red';
+        document.querySelector('.maingatebtn').style.color = 'white';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main Gate unlocked \n'
     }else{
         mainGate.innerHTML = "LOCK"
-        document.getElementById('mainlock').style.display = 'inline-block';
-        document.getElementById('mainunlock').style.display = 'none';
-        document.querySelector('.btnDoor').style.backgroundColor = 'lime';
-        document.querySelector('.btnDoor').style.color = 'black';
+        document.getElementById('maingateLockicon').style.display = 'inline-block';
+        document.getElementById('maingateUnlockicon').style.display = 'none';
+        document.querySelector('.maingatebtn').style.backgroundColor = 'lime';
+        document.querySelector('.maingatebtn').style.color = 'black';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main Gate locked \n'
     }
  }
- 
+ // Front Door
+
+ function frontdoor() {
+    let frontDoor = document.getElementById('frontDoorlabel');
+    if(frontDoor.innerHTML == "LOCK"){
+        frontDoor.innerHTML = "UNLOCK";
+        document.getElementById('frontDoorLockicon').style.display = 'none';
+        document.getElementById('frontDoorUnlockicon').style.display = 'inline-block';
+        document.querySelector('.frontdoorbtn').style.backgroundColor = 'red';
+        document.querySelector('.frontdoorbtn').style.color = 'white';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door unlocked \n'
+    }else{
+        frontDoor.innerHTML = "LOCK"
+        document.getElementById('frontDoorLockicon').style.display = 'inline-block';
+        document.getElementById('frontDoorUnlockicon').style.display = 'none';
+        document.querySelector('.frontdoorbtn').style.backgroundColor = 'lime';
+        document.querySelector('.frontdoorbtn').style.color = 'black';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door locked \n'
+    }
+ }
+ // Front Door
+ function backdoor() {
+    let backDoor = document.getElementById('backDoorlabel');
+    if(backDoor.innerHTML == "LOCK"){
+        backDoor.innerHTML = "UNLOCK";
+        document.getElementById('backDoorLockicon').style.display = 'none';
+        document.getElementById('backDoorUnlockicon').style.display = 'inline-block';
+        document.querySelector('.backdoorbtn').style.backgroundColor = 'red';
+        document.querySelector('.backdoorbtn').style.color = 'white';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door unlocked \n'
+    }else{
+        backDoor.innerHTML = "LOCK"
+        document.getElementById('backDoorLockicon').style.display = 'inline-block';
+        document.getElementById('backDoorUnlockicon').style.display = 'none';
+        document.querySelector('.backdoorbtn').style.backgroundColor = 'lime';
+        document.querySelector('.backdoorbtn').style.color = 'black';
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door locked \n'
+    }
+ }
 
 
 
