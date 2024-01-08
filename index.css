@@ -33,6 +33,32 @@ video {
 .contentWrapper {
     height: 400px;
     width: 100%;
+    padding: 2px;
+}
+.imgDiv{
+    height: 100%;
+    width: 100%;
+    position: relative;
+ 
+}
+#controllerImage {
+    height: 400px;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+}
+.content1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.overlay1 {
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 5px;
 }
 
 
@@ -42,11 +68,44 @@ video {
 
 
 
+
+@media screen and (max-width:768px){
+    .introdiv {
+        height: 768px;
+    }
+    .overlay {
+        height: 768px;
+    }
+    .contentWrapper {
+        height: 250px ;
+    }
+    #controllerImage {
+        height: 250px ;
+    }
+
+    .overlay1 {
+        height: 250px ;
+    }
+}
+
 @media screen and (max-width:500px){
     .introdiv {
         height: 400px;
     }
     .overlay {
         height: 400px;
+    }
+    .contentWrapper {
+        height: 300px ;
+        padding: 0;
+    }
+    #controllerImage {
+        height: 300px ;
+        border-radius: 0;
+    }
+
+    .overlay1 {
+        height: 300px ;
+        border-radius: 0;
     }
 }
