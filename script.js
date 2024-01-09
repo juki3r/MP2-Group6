@@ -8,14 +8,6 @@ setInterval(() => {
     document.querySelector('.oras').innerHTML = new Date().toLocaleTimeString();
 }, 1000);
 
-// Hamburger button
-function hamburgerbtn() {
-    if(document.getElementById('mobile').style.display == "block"){
-        document.getElementById('mobile').style.display = "none";
-    }else{
-        document.getElementById('mobile').style.display = "block";
-    }   
-}
 
 
 
@@ -179,8 +171,7 @@ function backyardlight(){
             }
 }
 setInterval(() => {
-    var demo = fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2');
-    demo.then(res => res.json()).then(data =>
+    fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2').then(res => res.json()).then(data =>
        data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
 
     
@@ -213,7 +204,7 @@ setInterval(() => {
             document.getElementById('sprinkler').style.background ='none';
             document.getElementById('sprinkler').style.color = 'white';
         }
-        document.getElementById('gas').innerHTML = e.feeds[0].field1;
+        document.getElementById('gas').innerHTML = e.feeds[0].field1 + ' PPM';
     });
        
 }, 10000);
