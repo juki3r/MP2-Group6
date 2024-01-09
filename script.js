@@ -179,26 +179,41 @@ function backyardlight(){
             }
 }
 setInterval(() => {
-    var demo = fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2');
-    demo.then(res => res.json()).then(data =>
-       data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
+    // var demo = fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2');
+    // demo.then(res => res.json()).then(data =>
+    //    data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
 
     var main_power = fetch('https://api.thingspeak.com/channels/2385141/fields/1.json?results=2');
     main_power.then(res => res.json()).then(function(e){
-        if(e.feeds[0].field1 > 0){
+        if(e.feeds[0].field1 >= 180){
             document.getElementById('service').innerHTML = 'Main Power';
-            document.getElementById('service').style.backgroundColor = 'lime';
+            document.getElementById('service').style.background = 'lime';
             document.getElementById('service').style.color = 'black';
-            document.getElementById('backup').innerHTML = 'StandBy';
+            document.getElementById('backup').innerHTML = 'Stand-By';
+            document.getElementById('backup').style.background = 'orangered';
+            document.getElementById('backup').style.color = 'black';
         }else{
             document.getElementById('service').innerHTML = 'Back-up Power';
-            document.getElementById('backup').innerHTML = 'In-Service';
-            document.getElementById('service').style.backgroundColor = 'red';
+            document.getElementById('service').style.background = 'red';
             document.getElementById('service').style.color = 'white';
+            document.getElementById('backup').innerHTML = 'In-Service';
+            document.getElementById('backup').style.background = 'lime';
+            document.getElementById('backup').style.color = 'black';
         }
+        document.getElementById('voltage').innerHTML = e.feeds[0].field1 + ' Volts';
+    });
+
+    var gas = fetch('https://api.thingspeak.com/channels/2396754/fields/1.json?api_key=ZE7MXIFRRUAOEVK2&results=2');
+    gas.then(res => res.json()).then(function(e){
+        if(e.feeds[0].field1 >= 80){
+            document.getElementById('fire').innerHTML = 'Positive';
+        }else{
+            document.getElementById('fire').innerHTML = 'Negative';
+        }
+        document.getElementById('gas').innerHTML = e.feeds[0].field1;
     });
        
-}, 10);
+}, 1);
 //KWH
 let x = 10.012345;
 setInterval(() => {
@@ -206,8 +221,6 @@ setInterval(() => {
     x+=0.05;
     
 }, 1000);
-
-
 
 
 
@@ -222,16 +235,17 @@ maingatebtn.addEventListener("change", function(){
     maingatebtn.checked ? textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main gate is locked \n' : 
                                 textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main gate is unlocked \n'
 })
-
-
 var frontdoorbtn = document.getElementById('frontdoorbtn');
 frontdoorbtn.addEventListener("change", function(){
     frontdoorbtn.checked ? textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door is locked \n' : 
                                 textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door is unlocked \n'
 })
+var backdoorbtn = document.getElementById('backdoorbtn');
+backdoorbtn.addEventListener("change", function(){
+    backdoorbtn.checked ? textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door is locked \n' : 
+                                textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door is unlocked \n'
+})
 
-
-frontdoorbtn
 
 
 

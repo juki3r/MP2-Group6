@@ -131,36 +131,48 @@
                       <h4>Electricity</h4>
                       <table>
                         <tr>
-                          <td>Active</td>
-                          <td id="service"></td>
+                          <td>ACTIVE SOURCE</td>
+                          <td id="service">Retrieving data ...</td>
                         </tr>
                         <tr>
-                          <td>Voltage</td>
-                          <td>220 V</td>
+                          <td>Main Voltage</td>
+                          <td id="voltage">Retrieving data ...</td>
                         </tr>
                         <tr>
                           <td>Current</td>
-                          <td>180 A</td>
-                        </tr>                       
-                        <tr>
-                          <td>KWH</td>
-                          <td id="kwh">0</td>
+                          <td>180 Amps</td>
                         </tr>
                         <tr>
                           <td>Temperature</td>
-                          <td>30&deg;C</td>
+                          <td>45 &#8451;</td>
                         </tr>
                         <tr>
-                          <td>Humidity</td>
-                          <td>0</td>
+                          <td>Back-up status</td>
+                          <td id="backup">Retrieving data ...</td>
                         </tr>
-                        <tr>
-                          <td>Back up </td>
-                          <td id="backup"></td>
-                        </tr>                       
                       </table>
-                      
+                      <h4 style="padding: 10px;">Fire System</h4>
+                        <table>
+                          <tr>
+                            <td>System Status</td>
+                            <td style="background-color: lime; color: black;">ON</td>
+                          </tr>
+                          <tr>
+                            <td>Sprinkler Status</td>
+                            <td >Stand-By</td>
+                          </tr>
+                          <tr>
+                            <td>Gas</td>
+                            <td id="gas">Retrieving data ...</td>
+                          </tr>
+                          <tr>
+                            <td>Fire</td>
+                            <td id="fire">Retrieving data ...</td>
+                          </tr>
+                        </table>
+                         
                   </div>
+                  
               </div>
               
           </div>
@@ -182,15 +194,18 @@
                             </div>
                             <h5 style="padding: 4px;" >Main Gate</h5>
                           </div>
-
                           <div class="carousel-item ">
                             <div>
                               <input type="checkbox" id="frontdoorbtn" checked  data-toggle="switchbutton"  data-onlabel="Lock" data-offlabel="Unlock" data-onstyle="success" data-offstyle="danger">
                             </div>
                             <h5 style="padding: 4px;" >Front Door</h5>
                           </div>
-                          
-                    
+                          <div class="carousel-item ">
+                            <div>
+                              <input type="checkbox" id="backdoorbtn" checked  data-toggle="switchbutton"  data-onlabel="Lock" data-offlabel="Unlock" data-onstyle="success" data-offstyle="danger">
+                            </div>
+                            <h5 style="padding: 4px;" >Back Door</h5>
+                          </div>                       
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#doorsSliding" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -262,6 +277,7 @@
                       </div>
                     </div>
                   </div>
+            
               </div>
               <div class="col-12 col-md-4 appdisplay d-flex justify-content-center">
                   <div class=" w-100 shadow border rounded wrapper-div">
