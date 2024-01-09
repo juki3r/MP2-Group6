@@ -61,7 +61,7 @@ td{
    padding: 0;
    margin-top: -20px;
 }
-.maingatebtn, .frontdoorbtn, .backdoorbtn {
+/* .maingatebtn, .frontdoorbtn, .backdoorbtn {
     width: 50%;
     font-size: 18px;
     border: none;
@@ -70,9 +70,10 @@ td{
     background-color: lime;
     font-weight: bold;
     padding: 4px;
+} */
+.switch{
+    width: 100px !important;
 }
-
-
 
 
 

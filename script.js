@@ -217,66 +217,31 @@ textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTime
 
 // Doors
  
- function maingate() {
-    let mainGate = document.getElementById('mainGateLabel');
-    if(mainGate.innerHTML == "LOCK"){
-        mainGate.innerHTML = "UNLOCK";
-        document.getElementById('maingateLockicon').style.display = 'none';
-        document.getElementById('maingateUnlockicon').style.display = 'inline-block';
-        document.querySelector('.maingatebtn').style.backgroundColor = 'red';
-        document.querySelector('.maingatebtn').style.color = 'white';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main Gate unlocked \n'
-    }else{
-        mainGate.innerHTML = "LOCK"
-        document.getElementById('maingateLockicon').style.display = 'inline-block';
-        document.getElementById('maingateUnlockicon').style.display = 'none';
-        document.querySelector('.maingatebtn').style.backgroundColor = 'lime';
-        document.querySelector('.maingatebtn').style.color = 'black';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main Gate locked \n'
-    }
- }
- // Front Door
+var maingatebtn = document.getElementById('maingatebtn');
+maingatebtn.addEventListener("change", function(){
+    maingatebtn.checked ? textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main gate is locked \n' : 
+                                textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Main gate is unlocked \n'
+})
 
- function frontdoor() {
-    let frontDoor = document.getElementById('frontDoorlabel');
-    if(frontDoor.innerHTML == "LOCK"){
-        frontDoor.innerHTML = "UNLOCK";
-        document.getElementById('frontDoorLockicon').style.display = 'none';
-        document.getElementById('frontDoorUnlockicon').style.display = 'inline-block';
-        document.querySelector('.frontdoorbtn').style.backgroundColor = 'red';
-        document.querySelector('.frontdoorbtn').style.color = 'white';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door unlocked \n'
-    }else{
-        frontDoor.innerHTML = "LOCK"
-        document.getElementById('frontDoorLockicon').style.display = 'inline-block';
-        document.getElementById('frontDoorUnlockicon').style.display = 'none';
-        document.querySelector('.frontdoorbtn').style.backgroundColor = 'lime';
-        document.querySelector('.frontdoorbtn').style.color = 'black';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door locked \n'
-    }
- }
- // Front Door
- function backdoor() {
-    let backDoor = document.getElementById('backDoorlabel');
-    if(backDoor.innerHTML == "LOCK"){
-        backDoor.innerHTML = "UNLOCK";
-        document.getElementById('backDoorLockicon').style.display = 'none';
-        document.getElementById('backDoorUnlockicon').style.display = 'inline-block';
-        document.querySelector('.backdoorbtn').style.backgroundColor = 'red';
-        document.querySelector('.backdoorbtn').style.color = 'white';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door unlocked \n'
-    }else{
-        backDoor.innerHTML = "LOCK"
-        document.getElementById('backDoorLockicon').style.display = 'inline-block';
-        document.getElementById('backDoorUnlockicon').style.display = 'none';
-        document.querySelector('.backdoorbtn').style.backgroundColor = 'lime';
-        document.querySelector('.backdoorbtn').style.color = 'black';
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back Door locked \n'
-    }
- }
+
+var frontdoorbtn = document.getElementById('frontdoorbtn');
+frontdoorbtn.addEventListener("change", function(){
+    frontdoorbtn.checked ? textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door is locked \n' : 
+                                textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front Door is unlocked \n'
+})
+
+
+frontdoorbtn
 
 
 
+
+
+
+
+// setTimeout(() => {
+//     window.location.assign('/')
+// }, 600000);
 
 
 
