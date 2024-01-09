@@ -183,8 +183,8 @@ setInterval(() => {
     demo.then(res => res.json()).then(data =>
        data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
 
-    var main_power = fetch('https://api.thingspeak.com/channels/2385141/fields/1.json?results=2');
-    main_power.then(res => res.json()).then(function(e){
+    
+    fetch('https://api.thingspeak.com/channels/2385141/fields/1.json?results=2').then(res => res.json()).then(function(e){
         if(e.feeds[0].field1 >= 180){
             document.getElementById('service').innerHTML = 'Main Power';
             document.getElementById('service').style.background = 'lime';
@@ -203,8 +203,7 @@ setInterval(() => {
         document.getElementById('voltage').innerHTML = e.feeds[0].field1 + ' Volts';
     });
 
-    var gas = fetch('https://api.thingspeak.com/channels/2396754/fields/1.json?api_key=ZE7MXIFRRUAOEVK2&results=2');
-    gas.then(res => res.json()).then(function(e){
+  fetch('https://api.thingspeak.com/channels/2396754/fields/1.json?api_key=ZE7MXIFRRUAOEVK2&results=2').then(res => res.json()).then(function(e){
         if(e.feeds[0].field1 >= 80){
             document.getElementById('sprinkler').innerHTML = 'Ready';
             document.getElementById('sprinkler').style.background ='lime';
@@ -217,15 +216,7 @@ setInterval(() => {
         document.getElementById('gas').innerHTML = e.feeds[0].field1;
     });
        
-}, 1);
-//KWH
-let x = 10.012345;
-setInterval(() => {
-    document.getElementById('kwh').innerHTML = x.toPrecision(4);
-    x+=0.05;
-    
-}, 1000);
-
+}, 100);
 
 
 //Getting all Logs to be displayed

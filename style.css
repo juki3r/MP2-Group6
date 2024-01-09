@@ -45,6 +45,7 @@ table{
 td {
     border: 1px solid grey;
     width: 50%;
+
 }
 
 
@@ -60,16 +61,7 @@ td {
    padding: 0;
    margin-top: -20px;
 }
-/* .maingatebtn, .frontdoorbtn, .backdoorbtn {
-    width: 50%;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    background-color: lime;
-    font-weight: bold;
-    padding: 4px;
-} */
+
 .switch{
     width: 100px !important;
 }
@@ -97,6 +89,9 @@ td {
         width: 100px;
         height: 130px;
     }
+    td {
+        font-size: 14px;
+    }
 }
 
 
@@ -106,5 +101,6 @@ td {
     .row1{
         margin-top: 40px;
     }
+    
    
 }
