@@ -11,7 +11,7 @@
 <body>
     <div class="container-fluid">
         <div class="card" style="width: 50rem; margin: 50px auto; background-color: seagreen; color: white;">
-            <form action="https://formsubmit.co/benedictovictorga.com" method="POST" class="p-5"/>
+            <form action="https://formsubmit.co/benedictovictorga@gmail.com" method="POST" class="needs-validation p-5" novalidate/>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-6">
@@ -29,11 +29,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="firstname" class="form-label">Firstname</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname">
+                                <input type="text" class="form-control" id="firstname" name="firstname" required>
                             </div>
                             <div class="mb-3">
                                 <label for="lastname" class="form-label">Lastname</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname">
+                                <input type="text" class="form-control" id="lastname" name="lastname" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
@@ -42,20 +42,42 @@
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Phone Number</label>
-                                <input type="number" class="form-control" id="phone" name="phone">
+                                <input type="number" class="form-control" id="phone" name="phone" required>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                <input type="hidden" name="_template" value="table">
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+    </script>
 </body>
 </html>
