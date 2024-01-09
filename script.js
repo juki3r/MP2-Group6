@@ -179,9 +179,9 @@ function backyardlight(){
             }
 }
 setInterval(() => {
-    // var demo = fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2');
-    // demo.then(res => res.json()).then(data =>
-    //    data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
+    var demo = fetch('https://api.thingspeak.com/channels/2384968/fields/1.json?results=2');
+    demo.then(res => res.json()).then(data =>
+       data.feeds[1].field1 == 0 ? backyardbulb_status.src = "images/pic_bulboff.gif": backyardbulb_status.src = "images/pic_bulbon.gif");
 
     var main_power = fetch('https://api.thingspeak.com/channels/2385141/fields/1.json?results=2');
     main_power.then(res => res.json()).then(function(e){
@@ -206,9 +206,13 @@ setInterval(() => {
     var gas = fetch('https://api.thingspeak.com/channels/2396754/fields/1.json?api_key=ZE7MXIFRRUAOEVK2&results=2');
     gas.then(res => res.json()).then(function(e){
         if(e.feeds[0].field1 >= 80){
-            document.getElementById('fire').innerHTML = 'Positive';
+            document.getElementById('sprinkler').innerHTML = 'Ready';
+            document.getElementById('sprinkler').style.background ='lime';
+            document.getElementById('sprinkler').style.color = 'black';
         }else{
-            document.getElementById('fire').innerHTML = 'Negative';
+            document.getElementById('sprinkler').innerHTML = 'Stand-By';
+            document.getElementById('sprinkler').style.background ='none';
+            document.getElementById('sprinkler').style.color = 'white';
         }
         document.getElementById('gas').innerHTML = e.feeds[0].field1;
     });
