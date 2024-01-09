@@ -216,7 +216,7 @@ setInterval(() => {
         document.getElementById('gas').innerHTML = e.feeds[0].field1;
     });
        
-}, 100);
+}, 10000);
 
 
 //Getting all Logs to be displayed
